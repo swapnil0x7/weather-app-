@@ -16,40 +16,7 @@ import { formatTimeTo12Hour } from "../../utils/helperMethods.js";
 import Lottie from "lottie-react";
 import Loader from "../../assets/loader.json";
 
-function Homepage({ unit, toggleUnit }) {
-  const [weatherData, setWeatherData] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          fetchWeatherData(latitude, longitude);
-        },
-        (error) => {
-          setError("Unable to retrieve your location");
-        }
-      );
-    } else {
-      setError("Geolocation is not supported by your browser.");
-    }
-  }, [unit]);
-
-  // Function to fetch weather data from the WeatherAPI
-  const fetchWeatherData = async (lat, lon) => {
-    try {
-      const response = await fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=5cec91c1badf4f9ab2f101547242010&q=${lat},${lon}&aqi=no&days=5`
-      );
-      const data = await response.json();
-      console.log("DATA: ", data);
-      setWeatherData(data);
-    } catch (err) {
-      setError("Failed to fetch weather data.");
-    }
-  };
-
+function Homepage({ unit, toggleUnit, weatherData, error }) {
   if (error) {
     return <div>Error: {error}</div>;
   }

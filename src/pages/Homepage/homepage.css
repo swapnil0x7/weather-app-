@@ -21,10 +21,11 @@
   border-radius: 2rem;
   background-color: #132235;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .highlights section:hover {
-  transform: scale(1.1);
+  transform: scale(1.025);
 }
 
 .weather-container {
