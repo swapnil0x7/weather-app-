@@ -1,0 +1,53 @@
+.current-weather {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.location {
+  padding: 0.5rem 0rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.location .heading {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.location .subheading {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #cbcbcb;
+}
+
+.location img {
+  height: 8rem;
+  width: 8rem;
+}
+
+.location .description {
+  padding: 0.5rem 0;
+  color: #21c621;
+}
+.location .value {
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.icon img {
+  position: relative;
+  bottom: -1rem;
+  left: -1rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+.current-weather .icon .top-section {
+  display: flex;
+  align-items: baseline;
+  font-size: 1rem;
+  font-weight: 600;
+}

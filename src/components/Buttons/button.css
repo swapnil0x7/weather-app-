@@ -1,0 +1,17 @@
+.button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #1cad1c;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: rgb(27, 173, 8) 0.5px solid;
+  width: 10rem;
+  height: 2.5rem;
+}
+
+.button:hover {
+  background-color: #13b01b; /* Darker green */
+}

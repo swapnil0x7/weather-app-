@@ -1,0 +1,35 @@
+.hourly-forecast-container .heading {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #9196a0;
+  height: 100%;
+}
+
+.hourly-forecast-container .list {
+  font-weight: 600;
+  padding-top: 1.5rem;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.hourly-forecast-container .list .time {
+  color: #9196a0;
+  padding-bottom: 3px;
+}
+
+.hourly-forecast-container .list .temperature {
+  padding: 5px;
+  font-size: 1.25rem;
+}
+
+.hourly-forecast-container .list .card {
+  width: 100%;
+  border-right: 1px solid #35455f;
+}
+
+.hourly-forecast-container .list .card:last-child {
+  border-right: none;
+}
