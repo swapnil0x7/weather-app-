@@ -15,9 +15,9 @@ export const getDayFromDate = (dateString) => {
 
 export const capitalizeFirstLetters = (str) => {
   return str
-    .split(" ") // Split the string into an array of words
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
-    .join(" "); // Join the words back into a single string
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 };
 
 export const formatTimeTo12Hour = (timeString) => {
