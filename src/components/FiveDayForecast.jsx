@@ -1,6 +1,10 @@
 import React from "react";
 import "./fiveDayForecast.css";
-import { capitalizeFirstLetters, getDayFromDate } from "../utils/helperMethods";
+import {
+  capitalizeFirstLetters,
+  getDayFromDate,
+  getFirstTwoWords,
+} from "../utils/helperMethods";
 
 function FiveDayForecast({ unit, forecastData }) {
   return (
@@ -8,21 +12,33 @@ function FiveDayForecast({ unit, forecastData }) {
       <div className="heading">5-DAY FORECAST</div>
       <div className="list">
         {forecastData.map((item) => {
+          const maxTemp =
+            unit === "C"
+              ? Math.round(item.day.maxtemp_c)
+              : Math.round(item.day.maxtemp_f);
+          const minTemp =
+            unit === "C"
+              ? Math.round(item.day.mintemp_c)
+              : Math.round(item.day.mintemp_f);
+
           return (
-            <>
-              <div className="card" key={item.hour}>
+            <React.Fragment key={item.date}>
+              <div className="card">
                 <div>{getDayFromDate(item.date)}</div>
                 <div className="condition">
                   <img src={item.day.condition.icon} alt="weather-icon" />
-                  <div>{capitalizeFirstLetters(item.day.condition.text)}</div>
+                  <div>
+                    {getFirstTwoWords(
+                      capitalizeFirstLetters(item.day.condition.text)
+                    )}
+                  </div>
                 </div>
                 <div>
-                  {Math.round(item.day.maxtemp_c)} /{" "}
-                  {Math.round(item.day.mintemp_c)}
+                  {maxTemp} / {minTemp} {unit === "C" ? "°C" : "°F"}
                 </div>
               </div>
               <div className="separator"></div>
-            </>
+            </React.Fragment>
           );
         })}
       </div>

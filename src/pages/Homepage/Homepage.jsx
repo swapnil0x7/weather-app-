@@ -13,6 +13,8 @@ import visibilityIcon from "../../assets/visibilityIcon.svg";
 import sunriseIcon from "../../assets/sunrise.svg";
 import sunsetIcon from "../../assets/sunset.svg";
 import { formatTimeTo12Hour } from "../../utils/helperMethods.js";
+import Lottie from "lottie-react";
+import Loader from "../../assets/loader.json";
 
 function Homepage({ unit, toggleUnit }) {
   const [weatherData, setWeatherData] = useState(null);
@@ -53,7 +55,12 @@ function Homepage({ unit, toggleUnit }) {
   }
 
   if (!weatherData) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-spinner">
+        <Lottie animationData={Loader} />
+        <p>Hang in there, storming through the data.</p>
+      </div>
+    );
   }
 
   return (

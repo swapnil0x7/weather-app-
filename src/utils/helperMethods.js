@@ -35,3 +35,7 @@ export const formatTimeTo12Hour = (timeString) => {
 
   return `${hours}:${formattedMinutes} ${ampm}`;
 };
+
+export const getFirstTwoWords = (sentence) => {
+  return sentence.split(" ").slice(0, 2).join(" ");
+};
